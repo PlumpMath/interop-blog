@@ -6,3 +6,8 @@
 (defrecord Calculator [operand]
   ICalculator
   (multiply [this x] (mult x operand)))
+
+(defn new-reified-calc [operand]
+  (reify
+    ICalculator
+    (multiply [this x] (mult x operand))))
